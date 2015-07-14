@@ -63,4 +63,10 @@ pre.prettyprint { background:#f4f4f4; padding: 1.5em; border:none; margin: 0 0 1
 	max-width: 100%;
 	margin: 0;
 	padding: 0;
+	overflow: hidden;
+}
+
+body, html{
+	overflow: hidden;
+	height: 100% !important;
 }

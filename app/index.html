@@ -1,84 +1,96 @@
 <!DOCTYPE html>
 <html lang="en">
-    <head>
-        <meta charset="UTF-8">
-        <title>welcome</title>
-        <!-- bootstrap -->
-        <link rel="stylesheet" href="bower_components/bootstrap/dist/css/bootstrap.min.css">
-        <!--  styles  -->
-        <link rel="stylesheet" href="assets/css/main.css">
-        <link rel="stylesheet" href="assets/css/fonts.css">
 
-        <!-- map styles -->
-        <link type="text/css" rel="stylesheet" href="assets/map/css/prettify.css" />
-        <link type="text/css" rel="stylesheet" href="assets/map/css/style.css" />
-        
-    </head>
-    <body>
-        <div class="container-fluid">
-            <div class="content">                
-                    <article class="">
-                        <div class="">
-                            <div id="map_canvas" class="map"></div>
-                        </div>
-                        <p></p>
-                        
-                        <ul>
-                            <li data-gmapping='{"id":"m_1","latlng":{"lat":27.6648274,"lng":-81.51575350000002},"tags":"drupal"}'>
-                                
-                            </li>
-                            <li data-gmapping='{"id":"m_2","latlng":{"lat":1.352083,"lng":103.81983600000001},"tags":"drupal"}'>
-                                
-                            </li>
-                            <li data-gmapping='{"id":"m_3","latlng":{"lat":39.7391536,"lng":-104.9847034},"tags":"drupal"}'>
-                                
-                            </li>
-                            <li data-gmapping='{"id":"m_4","latlng":{"lat":36.1658899,"lng":-86.7844432},"tags":"drupal"}'>
-                                
-                            </li>
-                            <li data-gmapping='{"id":"m_5","latlng":{"lat":55.6760968,"lng":12.568337100000008},"tags":"drupal"}'>
-                                
-                            </li>
-                            <li data-gmapping='{"id":"m_5","latlng":{"lat":50.6760968,"lng":12.568337100000008},"tags":"drupal"}'>
-                                
-                            </li>
-                            <li data-gmapping='{"id":"m_5","latlng":{"lat":41.6760968,"lng":41.568337100000008},"tags":"drupal"}'>
-                                
-                            </li>
-                        </ul>
-                    </article>
-            </div>
-            <footer>
-            </footer>
+<head>
+    <meta charset="UTF-8">
+    <title>welcome</title>
+    <!-- bootstrap -->
+    <link rel="stylesheet" href="bower_components/bootstrap/dist/css/bootstrap.min.css">
+    <!--  styles  -->
+    <link rel="stylesheet" href="assets/css/main.css">
+    <link rel="stylesheet" href="assets/css/fonts.css">
+    <!-- map styles -->
+    <link type="text/css" rel="stylesheet" href="assets/map/css/prettify.css" />
+    <link type="text/css" rel="stylesheet" href="assets/map/css/style.css" />
+</head>
+
+<body>
+    <div class="container-fluid">
+        <div class="content">
+            <article class="">
+                <div class="">
+                    <div id="map_canvas" class="map"></div>
+                </div>
+                <p></p>
+                <ul>
+                    <li data-gmapping='{"id":"m_1","latlng":{"lat":27.6648274,"lng":-81.51575350000002},"tags":"drupal"}'>
+                    </li>
+                    <li data-gmapping='{"id":"m_2","latlng":{"lat":1.352083,"lng":103.81983600000001},"tags":"drupal"}'>
+                    </li>
+                    <li data-gmapping='{"id":"m_3","latlng":{"lat":39.7391536,"lng":-104.9847034},"tags":"drupal"}'>
+                    </li>
+                    <li data-gmapping='{"id":"m_4","latlng":{"lat":36.1658899,"lng":-86.7844432},"tags":"drupal"}'>
+                    </li>
+                    <li data-gmapping='{"id":"m_5","latlng":{"lat":55.6760968,"lng":12.568337100000008},"tags":"drupal"}'>
+                    </li>
+                    <li data-gmapping='{"id":"m_5","latlng":{"lat":50.6760968,"lng":12.568337100000008},"tags":"drupal"}'>
+                    </li>
+                    <li data-gmapping='{"id":"m_5","latlng":{"lat":41.6760968,"lng":41.568337100000008},"tags":"drupal"}'>
+                    </li>
+                </ul>
+            </article>
         </div>
-    </body>
-    <script src="bower_components/bootstrap/dist/js/bootstrap.js"></script>
-    <script src="assets/js/myscript.js"></script>
+        <footer>
+        </footer>
+    </div>
+</body>
+<script src="bower_components/bootstrap/dist/js/bootstrap.js"></script>
+<script src="assets/js/myscript.js"></script>
+<!-- map js -->
+<script type="text/javascript" src="http://maps.google.com/maps/api/js?sensor=false"></script>
+<script type="text/javascript" src="assets/map/js/jquery-1.7.1/jquery.min.js"></script>
+<script type="text/javascript" src="assets/map/js/underscore-1.2.2/underscore.min.js"></script>
+<script type="text/javascript" src="assets/map/js/prettify/prettify.min.js"></script>
+<script type="text/javascript" src="assets/map/js/demo.js"></script>
+<script type="text/javascript" src="assets/map/js/jquery.ui.map.js"></script>
+<script type="text/javascript">
+// $(function() {
+//     demo.add(function() {
+//         $('#map_canvas').gmap({
+//             'disableDefaultUI': true,
+//             'callback': function() {
+//                 var self = this;
+//                 $("[data-gmapping]").each(function(i, el) {
+//                     var data = $(el).data('gmapping');
+//                     self.addMarker({
+//                         'id': data.id,
+//                         'tags': data.tags,
+//                         'position': new google.maps.LatLng(data.latlng.lat, data.latlng.lng),
+//                         'bounds': true
+//                     }, function(map, marker) {
+//                         $(el).click(function() {
+//                             $(marker).triggerEvent('click');
+//                         });
+//                     }).click(function() {
+//                         self.openInfoWindow({
+//                             'content': $(el).find('.info-box').text()
+//                         }, this);
+//                     });
+//                 });
+//             }
+//         });
+//     }).load();
+// });
+$('#map_canvas').gmap({ 'center': '41.7324592,44.8070955' });
+$('#map_canvas').gmap('option', 'zoom', 13);
+$('#map_canvas').gmap().bind('init', function(evt, map) { 
+        $.getJSON( 'map.JSON', function(data) { 
+                $.each( data.markers, function(i, m) {
+                        $('#map_canvas').gmap('addMarker', { 'position': new google.maps.LatLng(m.latitude, m.longitude) } );
+                });
+        });                                                                                                                                                                                                                       
+});
 
-    <!-- map js -->
-    <script type="text/javascript" src="http://maps.google.com/maps/api/js?sensor=false"></script>
-    <script type="text/javascript" src="assets/map/js/jquery-1.7.1/jquery.min.js"></script>
-    <script type="text/javascript" src="assets/map/js/underscore-1.2.2/underscore.min.js"></script>
-    <script type="text/javascript" src="assets/map/js/prettify/prettify.min.js"></script>
-    <script type="text/javascript" src="assets/map/js/demo.js"></script>
-    <script type="text/javascript" src="assets/map/js/jquery.ui.map.js"></script>
-    <script type="text/javascript">
-    $(function() {
-    demo.add(function() {
-    $('#map_canvas').gmap({'disableDefaultUI':true, 'callback': function() {
-    var self = this;
-    $("[data-gmapping]").each(function(i,el) {
-    var data = $(el).data('gmapping');
-    self.addMarker({'id': data.id, 'tags':data.tags, 'position': new google.maps.LatLng(data.latlng.lat, data.latlng.lng), 'bounds':true }, function(map,marker) {
-    $(el).click(function() {
-    $(marker).triggerEvent('click');
-    });
-    }).click(function() {
-    self.openInfoWindow({ 'content': $(el).find('.info-box').text() }, this);
-    });
-    });
-    }});
-    }).load();
-    });
-    </script>
+</script>
+
 </html>
